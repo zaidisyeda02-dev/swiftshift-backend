@@ -14,7 +14,7 @@ const db = require("./src/db");
 const auth = require("./src/auth");
 
 const app = express();
-const PORT = Number(process.env.PORT || "3002");
+const PORT = Number(process.env.PORT || "3000");
 
 /* Table creation and seeding run on module load, not only when this
    file is run directly, because a host can load the server as a

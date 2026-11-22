@@ -119,7 +119,7 @@ and quote and message status changes persist.
 All credentials come from environment variables only, never from
 hardcoded values. Copy `.env.example` to `.env` and fill it in.
 
-- `PORT` (default 3002)
+- `PORT` (default 3000)
 - `DB_HOST` (default 127.0.0.1)
 - `DB_PORT` (default 3306)
 - `DB_USER`
@@ -137,7 +137,7 @@ mysql -u root -e "CREATE DATABASE IF NOT EXISTS swiftshift CHARACTER SET utf8mb4
 node server.js
 ```
 
-Then open http://127.0.0.1:3002 and http://127.0.0.1:3002/admin.html.
+Then open http://127.0.0.1:3000 and http://127.0.0.1:3000/admin.html.
 
 ## Verify
 
@@ -147,7 +147,7 @@ node scripts/dom-check.js # jsdom DOM execution check against the running server
 ```
 
 Results on 2026-11-22, local MariaDB 10.11, clean database, server
-on port 3002:
+on port 3000:
 
 - verify.js: 62 checks, 0 failed.
 - dom-check.js: 51 checks, 0 failed.
