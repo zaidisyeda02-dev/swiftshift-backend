@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <title>Admin Panel, SwiftShift Movers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root { color-scheme: dark; --bg: #131316; --surface: #212127; --text: #ffffff; --dim: #b9b9c0; --border: #34343c; --yellow: #f5c518; --yellow-deep: #d9a90f; --ink: #101012; --sans: "Inter", system-ui, sans-serif; --head: "Archivo", "Inter", system-ui, sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.5; }
+      a { color: inherit; }
+      .wrap { max-width: 72rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+      .site-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--border); background: rgba(19, 19, 22, .97); }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1rem; }
+      .logo { font-family: var(--head); font-size: 20px; font-weight: 900; text-decoration: none; color: var(--yellow); letter-spacing: .03em; }
+      .logo span { color: var(--text); font-size: 12px; letter-spacing: .5em; display: block; font-weight: 700; }
+      .nav-btn { padding: .5rem; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--yellow); background: none; border: none; cursor: pointer; font-family: inherit; text-decoration: none; font-weight: 700; }
+      h1 { font-family: var(--head); text-transform: uppercase; font-size: 2rem; font-weight: 900; text-align: center; margin: 0; color: var(--yellow); }
+      .sub { margin: .5rem 0 0; text-align: center; font-size: 15px; color: var(--dim); }
+      .panel { border: 1px solid var(--border); background: var(--surface); padding: 1.5rem 1.25rem; border-radius: 8px; }
+      .field-label { display: block; margin-bottom: .375rem; font-size: .875rem; font-weight: 700; }
+      .field-input { width: 100%; border: 1px solid var(--border); background: #17171b; padding: .75rem 1rem; font-size: 15px; color: var(--text); outline: none; font-family: inherit; border-radius: 4px; }
+      .field-input:focus { border-color: var(--yellow); }
+      .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; background: var(--yellow); padding: .75rem 1.5rem; font-size: .875rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); border: none; cursor: pointer; font-family: var(--head); border-radius: 4px; }
+      .btn-primary:hover { background: var(--yellow-deep); }
+      .btn-block { width: 100%; }
+      .form-error { color: #ff8a80; font-size: .875rem; }
+      .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      .admin-table th, .admin-table td { text-align: left; padding: .625rem .5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+      .admin-table th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+      .admin-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+      .admin-tab { padding: .625rem 1.25rem; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; background: var(--surface); color: var(--text); cursor: pointer; font-family: inherit; font-weight: 700; }
+      .admin-tab.active { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+      .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1.5rem; }
+      @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; } }
+      .stat-card { padding: 1.25rem; text-align: center; }
+      .stat-card .num { font-size: 32px; font-weight: 800; margin: 0; color: var(--yellow); }
+      .stat-card .lbl { margin: .25rem 0 0; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+      .table-wrap { overflow-x: auto; margin-top: 1rem; }
+      select.field-input { width: auto; padding: .5rem; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a href="/" class="logo">SWIFTSHIFT<span>MOVERS</span></a>
+        <div>
+          <a href="/" class="nav-btn">Site</a>
+          <button type="button" class="nav-btn" id="sign-out-btn" style="display:none">Sign out</button>
+        </div>
+      </div>
+    </header>
+    <main class="wrap" style="padding-top:2rem;padding-bottom:3rem">
+      <h1>Admin Panel</h1>
+      <p class="sub">Quote requests, messages and subscribers for SwiftShift Movers.</p>
+      <div id="admin-root" style="margin-top:2rem"></div>
+    </main>
+    <script src="/admin.js"></script>
+  </body>
+</html>
